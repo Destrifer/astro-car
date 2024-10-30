@@ -88,10 +88,10 @@ const title = "Условия аренды автомобиля"; // Загол�
 					selectedClasses.length === 0 ||
 					selectedClasses.includes(carClassId)
 				) {
-					car.style.display = "flex";
+					(car as HTMLElement).style.display = "flex";
 					visibleCars++;
 				} else {
-					car.style.display = "none";
+					(car as HTMLElement).style.display = "none";
 				}
 			});
 

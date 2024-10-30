@@ -43,13 +43,13 @@ const cars = await getCollection("apiCars");
 				// Проверяем, соответствует ли карточка активной вкладке и не равна ли она 3
 				if (carId === activeTab && carId !== 3) {
 					if (count < 9) {
-						card.style.display = "flex"; // Показываем карточку
+						(card as HTMLElement).style.display = "flex";
 						count++;
 					} else {
-						card.style.display = "none"; // Скрываем лишние карточки
+						(card as HTMLElement).style.display = "none";
 					}
 				} else {
-					card.style.display = "none"; // Скрываем карточки, которые не соответствуют вкладке
+					(card as HTMLElement).style.display = "none";
 				}
 			});
 		}
