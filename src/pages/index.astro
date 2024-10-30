@@ -1,27 +1,16 @@
 ---
-// Импорт коллекции и извлечение данных о машинах
-import { getCollection } from "astro:content";
-const vehicles = await getCollection("apiCars");
+import Layout from "../layouts/layout.astro";
+import Slider from "@components/Slider.astro";
+const showTitle = false;
+const title = "Главная";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body class="container py-4">
-		<h1>Available Vehicles</h1>
-		<ul>
-			{
-				vehicles.map((vehicle: any) => (
-					<li>
-						<a href={`/vehicles/${vehicle.data.id}`}>{vehicle.data.model}</a>
-					</li>
-				))
-			}
-		</ul>
-	</body>
-</html>
+<Layout title={title} showTitle={showTitle}>
+	<Slider />
+</Layout>
+
+<style>
+	body {
+		font-size: 1em;
+	}
+</style>
