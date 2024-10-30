@@ -1,0 +1,12 @@
+---
+import { getCollection } from "astro:content";
+const vehicles = await getCollection("apiCars");
+
+// Получение параметра id из URL и данных машины из коллекции
+const { id } = Astro.params;
+const vehicle = vehicles.find((v: any) => v.data.id === id);
+---
+
+<h1>{vehicle.data.model} ({vehicle.data.year})</h1>
+
+<a href="/vehicles">Back to all vehicles</a>
